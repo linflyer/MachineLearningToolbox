@@ -7,8 +7,8 @@ import pickle
 import datetime
 from os.path import join
 
-csvfile = "/Volumes/chip-nlp/Public/THYME/corpus/structured/date_4codes_cpt.csv"
-working_dir = "/Volumes/chip-nlp/Public/THYME/corpus/structured/"
+csvfile = ""
+working_dir = ""
 f = open(csvfile, 'rU')
 reader = csv.reader(f, delimiter=",")
 reader.next()#skip the header line
@@ -61,7 +61,7 @@ with open(os.path.join(working_dir, 'pidDate_CPTs_dic.csv'),"wb") as cptfile:
         cptwriter.writerow([pid, d] + pidDate_CPTs.get((pid,d)))
 
 #find all raw text files:
-rawTextDir = "/Volumes/chip-nlp/Public/resources/corpora/thyme/THYMEcohort/DataSets/ClinicalNotes"
+rawTextDir = ""
 doc2ICDs = {}
 doc2CPTs = {}
 pids = os.listdir(rawTextDir)
@@ -94,7 +94,7 @@ with open(os.path.join(working_dir, 'docName_ICDs_dic.csv'),"wb") as icdfile:
     for name in doc2ICDs.keys():
         icdwriter.writerow([name] + doc2ICDs.get((name)))
 
-cuiFileDir = "/Volumes/chip-nlp/Public/resources/corpora/thyme/THYMEcohort/DataSets/xmi"
+cuiFileDir = ""
 nonEmptyFiles = os.popen('find '+cuiFileDir+' -type f ! -size 0').readlines()
 file_cuis = {}
 for file in nonEmptyFiles:
