@@ -6,6 +6,3 @@ ret=$?
 deactivate
 exit $ret
 
-#ssh clin@nlp-gpu "/home/clin/Projects/deepLearning/nn/classify-et.sh"
-#ret=$?
-#exit $ret
