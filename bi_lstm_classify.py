@@ -12,9 +12,7 @@ def main(args):
         sys.exit(-1)
     working_dir = args[0]
 
-    #target_dir = 'ctakes-temporal/target/eval/thyme/train_and_test/event-event/'
-    model_dir = "/Volumes/chip-nlp/Public/THYME/eval/thyme/train_and_test/joint"
-    #os.path.join(os.environ['CTAKES_ROOT'], target_dir)
+    model_dir = working_dir
     maxlen   = pickle.load(open(os.path.join(model_dir, "maxlen.p"), "rb"))
     word2int = pickle.load(open(os.path.join(model_dir, "word2int.p"), "rb"))
     label2int = pickle.load(open(os.path.join(model_dir, "label2int.p"), "rb"))
